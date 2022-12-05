@@ -1,7 +1,10 @@
 <template>
     <template v-if="job">
+        <Head>
+            <Title>{{ job.data.titre + config.title }}</Title>
+        </Head>
         <div class="container">
-            <h1>Details {{ job.data.Titre }}</h1>
+            <h1>Details {{ job.data.titre }}</h1>
             <hr>
             <p><i class="bi bi-geo-alt-fill"></i>{{ job.data.lieu }}</p>
             <p class="h3">Description</p>
@@ -15,7 +18,9 @@
 
 <script setup>
     import MarkdownIt from 'markdown-it'
+    const config = useAppConfig()
     const route = useRoute()
+    const { data: job } = await useFetch(`http://localhost:8055/items/emplois/${route.params.slug}`)
     
 	let md = new MarkdownIt
 
@@ -24,5 +29,4 @@
         return format
     }
 
-    const { pending, data: job } = await useFetch(`http://localhost:8055/items/emplois/${route.params.slug}`)
 </script>
