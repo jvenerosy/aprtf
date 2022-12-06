@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar navbar-expand-lg bg-light fixed-top ">
+	<nav :class="`navbar navbar-expand-lg bg-white fixed-top ${shadow}`">
 		<div class="container">
 			<NuxtLink to="/" class="navbar-brand">APRTF</NuxtLink>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,9 +24,34 @@
 import { ref } from 'vue'
 const { data: menus } = await useFetch('http://localhost:8055/items/menu_emplacement/header?fields=lien.titre,lien.url')
 const query = ref('')
+const shadow = ref('')
 
 const launchSearch = function(e) {	
 	window.location.href = `/recherche?search=${query.value}`
 	e.preventDefault()
 }
+
+if(process.client) {
+	window.addEventListener('scroll', (event) => {
+		const y = window.scrollY
+		if(y > 50) {
+			shadow.value = 'navbar-shadow'
+		} else {
+			shadow.value = ''
+		}
+	})
+}
+
+
+
 </script>
+
+<style>
+.navbar {
+	transition: all ease .2s;
+}
+.navbar-shadow {
+	-webkit-box-shadow: 0px -1px 15px 9px rgba(0,0,0,0.10); 
+	box-shadow: 0px -1px 15px 9px rgba(0,0,0,0.10);
+}
+</style>
