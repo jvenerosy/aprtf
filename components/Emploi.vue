@@ -1,14 +1,14 @@
 <template>
-    <div class="col col-md-6 col-12" v-if="job.status === 'published'">
+    <div class="col col-md-6 col-12" v-if="emploi.status === 'published'">
         <div class="card h-100">
             <div class="card-body">
-                <p class="h5">{{ job.titre }}</p>
+                <p class="h5">{{ emploi.titre }}</p>
                 <hr>
-                <p><i class="bi bi-geo-alt-fill"></i>{{ job.lieu }}</p>
-                <div v-html="renderMdShort(job.description)"></div>
-                <NuxtLink :to="`/emplois/${job.slug}`" class="btn btn-primary">Voir l'offre</NuxtLink>
+                <p><i class="bi bi-geo-alt-fill"></i>{{ emploi.lieu }}</p>
+                <div v-html="renderMdShort(emploi.description)"></div>
+                <NuxtLink :to="`/emplois/${emploi.slug}`" class="btn btn-primary">Voir l'offre</NuxtLink>
             </div>
-            <div class="card-footer text-muted" v-html="renderTimeTo(job.date_created)"></div>
+            <div class="card-footer text-muted" v-html="renderTimeTo(emploi.date_created)"></div>
         </div>
     </div>
 </template>
@@ -24,7 +24,7 @@ dayjs.extend(relativeTime)
 let md = new MarkdownIt
 
 function renderMdShort(item) {
-	const format = `${md.render(item).substring(0, 150)}[...]`
+	const format = `${md.render(item).substring(0, 150)}...`
 	return format
 }
 
@@ -34,6 +34,6 @@ function renderTimeTo(item) {
 }
 
 defineProps({
-    job: Object
+    emploi: Object
 })
 </script>

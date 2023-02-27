@@ -17,7 +17,7 @@ import MarkdownIt from 'markdown-it'
 let md = new MarkdownIt
 
 function renderMdShort(item) {
-	const format = `${md.render(item).substring(0, 150)}[...]`
+	const format = `${md.render(item).substring(0, 150)}...`
 	return format
 }
 

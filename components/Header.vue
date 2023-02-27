@@ -51,7 +51,7 @@ if(process.client) {
 	transition: all ease .2s;
 }
 .navbar-shadow {
-	-webkit-box-shadow: 0px -1px 15px 9px rgba(0,0,0,0.10); 
-	box-shadow: 0px -1px 15px 9px rgba(0,0,0,0.10);
+	-webkit-box-shadow: 0px -1px 10px 9px rgba(0,0,0,0.10); 
+	box-shadow: 0px -1px 10px 9px rgba(0,0,0,0.10);
 }
 </style>
