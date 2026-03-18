@@ -1,0 +1,23 @@
+@import "bulma";
+@import "variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;600;700&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: $tertiary-action;
+  }
+}
+
+.is-paddingless {
+  padding: 0;
+}
+
+.button.is-inverted {
+  background-color: $inverted !important;
+}
