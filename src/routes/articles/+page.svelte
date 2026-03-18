@@ -3,13 +3,12 @@
     import SocialLinks from '$lib/components/SocialLinks.svelte';
     import { store } from '$lib/stores/Store';
 
-    export let data;
+    let { data } = $props();
 
     $store.nav = 'articles';
     $store.slug = '/articles';
 
-    // Filter only published articles
-    $: publishedArticles = data.articles.filter(article => article.status === 'published');
+    const publishedArticles = $derived(data.articles.filter(article => article.status === 'published'));
 </script>
 
 <svelte:head>
@@ -47,7 +46,7 @@
 <SocialLinks />
 
 <style lang="scss">
-    @import '../../styles/variables.scss';
+    @use '../../styles/variables.scss' as *;
 
     .section {
         padding-top: 60px;

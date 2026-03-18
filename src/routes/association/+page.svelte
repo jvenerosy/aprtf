@@ -3,11 +3,11 @@
     import Membre from '$lib/components/blocs/Membre.svelte';
     import SocialLinks from '$lib/components/SocialLinks.svelte';
 
+    let { data } = $props();
+    const membres = data.donnees;
+
     $store.nav = 'association';
     $store.slug = '/association';
-
-    export let data;
-    const membres = data.donnees;
 </script>
 
 <section class="section association">
@@ -100,7 +100,7 @@
 <SocialLinks />
 
 <style lang="scss">
-    @import '../../styles/variables.scss';
+    @use '../../styles/variables.scss' as *;
 
     .container {
         &.is-max-small {

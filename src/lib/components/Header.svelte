@@ -1,15 +1,13 @@
 <script>
-	import { onMount } from 'svelte';
     import { store } from '../stores/Store';
 
-    let fixed = false;
-    let isBurger = false;
+    let fixed = $state(false);
+    let isBurger = $state(false);
 
     function openBurger() {
         isBurger = !isBurger;
 
-        // if isBurger is true set html size to 100% and overflow hidden
-        if (isBurger === true) {
+        if (isBurger) {
             document.documentElement.style.overflow = 'hidden';
             document.documentElement.style.height = '100%';
         } else {
@@ -18,31 +16,29 @@
         }
     }
 
+    function closeBurger() {
+        isBurger = false;
+        document.documentElement.style.overflow = 'auto';
+        document.documentElement.style.height = 'auto';
+    }
 
-    onMount(() => {
-        // if window resize isBurger = false
-        window.addEventListener('resize', () => {
-            isBurger = false;
-            document.documentElement.style.overflow = 'auto';
-            document.documentElement.style.height = 'auto';
-        });
+    $effect(() => {
+        const handleResize = () => closeBurger();
+        const handleScroll = () => {
+            fixed = window.scrollY > 0;
+        };
 
-        //when click on .nav > a link isBurger = false
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+
         document.querySelectorAll('.nav > li > a').forEach((link) => {
-            link.addEventListener('click', () => {
-                isBurger = false;
-                document.documentElement.style.overflow = 'auto';
-                document.documentElement.style.height = 'auto';
-            });
+            link.addEventListener('click', closeBurger);
         });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                fixed = true;
-            } else {
-                fixed = false;
-            }
-        });
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        };
     });
 </script>
 
@@ -74,7 +70,7 @@
                 </ul>
             </nav>
             <div class="burger-menu is-hidden-desktop">
-                <button id="burger" aria-label="Burger Menu" class="burger {isBurger === true ? "is-open" : ""}" on:click={openBurger}>
+                <button id="burger" aria-label="Burger Menu" class="burger {isBurger ? "is-open" : ""}" onclick={openBurger}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -85,7 +81,7 @@
 </header>
 
 <style lang="scss">
-    @import '../../styles/variables.scss';
+    @use '../../styles/variables.scss' as *;
 
     .skip-link {
         position: absolute;

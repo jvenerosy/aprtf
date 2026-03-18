@@ -4,11 +4,11 @@
     import Button from '$lib/components/forms/Button.svelte';
 
 	import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
-    
+
     import { PUBLIC_HOST_API } from '$env/static/public';
     import {slugify} from '$lib/utils/slugify';
 
-    export let data;
+    let { data } = $props();
     const modules = data.donnees;
     const module = data.module;
 
@@ -169,7 +169,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../../styles/variables.scss';
+    @use '../../../../styles/variables.scss' as *;
 
 
     .description {

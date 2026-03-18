@@ -2,7 +2,7 @@
     import { store } from '$lib/stores/Store';
     import EmploiSlider from '$lib/components/blocs/EmploiSlider.svelte';
 
-    export let data;
+    let { data } = $props();
     const emplois = data.emplois;
 
     $store.nav = 'emploi';
@@ -43,7 +43,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../styles/variables.scss';
+    @use '../../styles/variables.scss' as *;
 
     .container {
         &.is-max-small {

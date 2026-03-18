@@ -1,11 +1,11 @@
 <script lang="ts">
-    export let placeholder: string = "Tapez votre recherche";
+    let { placeholder = "Tapez votre recherche" }: { placeholder?: string } = $props();
 </script>
 
 <input type="text" placeholder={placeholder}>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     input {
         padding: 10px $gap;

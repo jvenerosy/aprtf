@@ -6,9 +6,14 @@
     $store.nav = 'therapie';
 
     /** @type {import('./$types').ActionData} */
-    export let form: any = {};
+    let { form = {} }: { form?: any } = $props();
 
-    $: step = form?.step ?? 2;
+    let step = $state(form?.step ?? 2);
+    $effect(() => {
+        if (form?.step !== undefined) {
+            step = form.step;
+        }
+    });
 
     function prevStep(e: any) {
         e.preventDefault();
@@ -16,20 +21,20 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    let orientation: string = form?.answer?.orientation ?? form?.orientation ?? '';
-    let demande: string = form?.answer?.demande ?? form?.demande ?? '';
+    let orientation: string = $state(form?.answer?.orientation ?? form?.orientation ?? '');
+    let demande: string = $state(form?.answer?.demande ?? form?.demande ?? '');
 
-    let addFamilyMember = {
+    let addFamilyMember = $state({
         role: '',
         details: '',
-    };
-    let addFamilyStranger = {
+    });
+    let addFamilyStranger = $state({
         role: '',
         details: '',
-    };
+    });
 
-    let personFamily: any[] = [];
-    let strangerFamily: any[] = [];
+    let personFamily: any[] = $state([]);
+    let strangerFamily: any[] = $state([]);
 
     let addPerson = (member: any) => {
         if (member.role === '' || member.details === '') {
@@ -63,11 +68,8 @@
         strangerFamily = strangerFamily;
     }
 
-    let exportFamily = '';
-    let exportStranger = '';
-
-    $: exportFamily = JSON.stringify(personFamily);
-    $: exportStranger = JSON.stringify(strangerFamily);
+    let exportFamily = $derived(JSON.stringify(personFamily));
+    let exportStranger = $derived(JSON.stringify(strangerFamily));
 
 </script>
 <section class="section">
@@ -248,7 +250,7 @@
                                                 {person.details}
                                             </div>
                                             <div class="column is-narrow">
-                                                <span on:click={() => removePerson(index)} class="link" on:keydown>Supprimer</span>
+                                                <button type="button" onclick={() => removePerson(index)} class="link">Supprimer</button>
                                             </div>
                                         </div>
                                         {/each}
@@ -263,14 +265,14 @@
                                     </div>
                                 </div>
                                 <div class="control">
-                                    <span class="link add" on:click={() => addPerson(addFamilyMember)} on:keydown>
+                                    <button type="button" class="link add" onclick={() => addPerson(addFamilyMember)}>
                                         <span class="icon-text">
                                             <span class="icon">
                                                 <img src="/images/pictos/add.svg" alt="" />
                                             </span>
                                             <span>Ajouter une personne</span>
                                         </span>
-                                    </span>
+                                    </button>
                                 </div>
                                 {#if form?.errors?.family}
                                 <p class="has-text-danger mention">{form?.errors?.family[0]}</p>
@@ -291,7 +293,7 @@
                                                 {stranger.details}
                                             </div>
                                             <div class="column is-narrow">
-                                                <span on:click={() => removeStranger(index)} class="link" on:keydown>Supprimer</span>
+                                                <button type="button" onclick={() => removeStranger(index)} class="link">Supprimer</button>
                                             </div>
                                         </div>
                                         {/each}
@@ -306,14 +308,14 @@
                                     </div>
                                 </div>
                                 <div class="control">
-                                    <span class="link add" on:click={() => addStranger(addFamilyStranger)} on:keydown>
+                                    <button type="button" class="link add" onclick={() => addStranger(addFamilyStranger)}>
                                         <span class="icon-text">
                                             <span class="icon">
                                                 <img src="/images/pictos/add.svg" alt="" />
                                             </span>
                                             <span>Ajouter une personne</span>
                                         </span>
-                                    </span>
+                                    </button>
                                     <input type="hidden" name="family" bind:value={exportFamily}>
                                     <input type="hidden" name="stranger" bind:value={exportStranger}>
                                     <!-- Champs cachés pour persister les données des étapes précédentes -->
@@ -330,7 +332,7 @@
                                     <div class="column"></div>
                                     <div class="column is-narrow">
                                         <div class="buttons">
-                                            <Button theme="is-inverted-family" text="← Précédent" on:click={prevStep} />
+                                            <Button theme="is-inverted-family" text="← Précédent" onclick={prevStep} />
                                             <Button theme="is-family" text="Suivant →" />
                                         </div>
                                     </div>
@@ -435,7 +437,7 @@
                                     <div class="column"></div>
                                     <div class="column is-narrow">
                                         <div class="buttons">
-                                            <Button theme="is-inverted-family" text="← Précédent" on:click={prevStep} />
+                                            <Button theme="is-inverted-family" text="← Précédent" onclick={prevStep} />
                                             <Button theme="is-family" text="Suivant →" />
                                         </div>
                                     </div>
@@ -472,7 +474,7 @@
 
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .step {
         margin: calc($gap*2) 0;

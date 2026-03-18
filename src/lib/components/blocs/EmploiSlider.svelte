@@ -1,16 +1,17 @@
 <script lang="ts">
-    export let slug: string;
-    export let date_updated: string;
-    export let titre: string;
-    export let lieu: string;
+    let { slug, date_updated, titre, lieu }: {
+        slug: string;
+        date_updated: string;
+        titre: string;
+        lieu: string;
+    } = $props();
 
-    
     function formatDate(date: string) {
-    const options: {} = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(date).toLocaleDateString('fr-FR', options);
+        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(date).toLocaleDateString('fr-FR', options);
     }
 
-    let dateUpdated:string = formatDate(date_updated);
+    const dateUpdated = $derived(formatDate(date_updated));
 </script>
 
 <a href="/emploi/{slug}" class="column is-4">
@@ -40,7 +41,7 @@
 </a>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
     
     .card {
         border-radius: $gap;

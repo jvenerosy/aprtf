@@ -4,7 +4,7 @@
     import ArticleSlider from '$lib/components/blocs/ArticleSlider.svelte';
     import SocialLinks from '$lib/components/SocialLinks.svelte';
 
-    export let data;
+    let { data } = $props();
 
     $store.nav = 'articles';
     $store.slug = data.article ? `/articles/${data.article.slug}` : '/articles/draft';
@@ -131,7 +131,7 @@
 <SocialLinks />
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .preview-banner {
         background: linear-gradient(90deg, #ff6b6b, #ffa500);

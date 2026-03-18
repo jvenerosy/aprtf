@@ -1,20 +1,18 @@
 <script>
-	import { onMount } from 'svelte';
-  import { store } from '$lib/stores/Store';
-	import FormationNav from "$lib/components/FormationNav.svelte";
-	import Button from '$lib/components/forms/Button.svelte';
-
+    import { store } from '$lib/stores/Store';
+    import FormationNav from "$lib/components/FormationNav.svelte";
+    import Button from '$lib/components/forms/Button.svelte';
     import { PUBLIC_HOST_API } from '$env/static/public';
-    import {slugify} from '$lib/utils/slugify'
+    import { slugify } from '$lib/utils/slugify';
 
-    export let data;
+    let { data } = $props();
     const modules = data.donnees;
 
     $store.nav = 'formations';
     $store.sousnav = 'tarifs';
     $store.slug = '/formations/tarifs';
 
-    onMount(() => {
+    $effect(() => {
         const accordionItems = document.querySelectorAll('.accordion-item');
         accordionItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -24,8 +22,7 @@
                 item.classList.add('is-active');
             });
         });
-
-    })
+    });
 </script>
 
 <FormationNav />
@@ -112,7 +109,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .title {
         font-family: $family-title;

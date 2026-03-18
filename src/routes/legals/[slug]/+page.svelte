@@ -1,9 +1,9 @@
 <script lang="ts">
     import { store } from '$lib/stores/Store';
 
-    export let data;
-    $: donnees = data.donnees;
-    
+    let { data } = $props();
+    const donnees = $derived(data.donnees);
+
     $store.nav = 'contact';
     $store.slug = '/contact';
 </script>
@@ -20,7 +20,7 @@
 
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
     
     .legals {
 

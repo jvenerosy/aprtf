@@ -1,22 +1,24 @@
 <script lang="ts">
-    export let statut: string;
-    export let date_debut: string;
-    export let date_fin: string;
-    export let lieu: string;
-    export let titre: string;
-    export let slug: string;
-    export let illustration_colloque: string;
+    import { PUBLIC_HOST_API } from '$env/static/public';
 
-	import { PUBLIC_HOST_API } from '$env/static/public';
+    let { statut, date_debut, date_fin, lieu, titre, slug, illustration_colloque }: {
+        statut: string;
+        date_debut: string;
+        date_fin: string;
+        lieu: string;
+        titre: string;
+        slug: string;
+        illustration_colloque: string;
+    } = $props();
 
     function formatDate(date: string) {
-    const options: {} = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(date).toLocaleDateString('fr-FR', options);
+        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(date).toLocaleDateString('fr-FR', options);
     }
 
-    let dateDebut:string = formatDate(date_debut);
-    let dateFin:string = formatDate(date_fin);
-    let statutValue:string = statut === 'past' ? 'Terminé' : statut === 'present' ? 'Inscriptions ouvertes' : 'A venir';
+    const dateDebut = $derived(formatDate(date_debut));
+    const dateFin = $derived(formatDate(date_fin));
+    const statutValue = $derived(statut === 'past' ? 'Terminé' : statut === 'present' ? 'Inscriptions ouvertes' : 'A venir');
 </script>
 
 <a href="/modules-courts/{slug}" class="column is-4">
@@ -36,7 +38,7 @@
 </a>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .card {
         border-radius: $gap;

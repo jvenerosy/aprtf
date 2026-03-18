@@ -1,15 +1,20 @@
 <script lang="ts">
-    export let text: string = "Suivant";
-    export let theme: string = "is-tertiary";
-    export let disabled: any = "";
+    import type { Snippet } from 'svelte';
+
+    let { text = "Suivant", theme = "is-tertiary", disabled = false, onclick }: {
+        text?: string;
+        theme?: string;
+        disabled?: boolean;
+        onclick?: () => void;
+    } = $props();
 </script>
 
-<button class="button {theme}" on:click disabled={disabled}>
+<button class="button {theme}" {onclick} {disabled}>
     {text}
 </button>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     button {
         color: $inverted;

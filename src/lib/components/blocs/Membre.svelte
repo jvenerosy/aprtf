@@ -1,15 +1,17 @@
 <script lang="ts">
-	export let name: string;
-	export let lastname: string;
-	export let description: string;
-	export let date: string;
-	export let photo: string;
-	export let type: string;
-
 	import { PUBLIC_HOST_API } from '$env/static/public';
-	import {slugify} from '$lib/utils/slugify';
+	import { slugify } from '$lib/utils/slugify';
 
-    const slugName = slugify(name);
+	let { name, lastname, description, date, photo, type }: {
+		name: string;
+		lastname: string;
+		description: string;
+		date: string;
+		photo: string;
+		type: string;
+	} = $props();
+
+	const slugName = $derived(slugify(name));
 </script>
 
 <div class="box is-{type} is-fullheight">
@@ -32,7 +34,7 @@
 </div>
 
 <style lang="scss">
-	@import '../../../styles/variables.scss';
+	@use '../../../styles/variables.scss' as *;
 
 	.box {
 		border-top: 9px solid #000;

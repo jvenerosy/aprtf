@@ -1,12 +1,11 @@
 <script>
     import { store } from '$lib/stores/Store';
-	import FormationNav from "$lib/components/FormationNav.svelte";
+    import FormationNav from "$lib/components/FormationNav.svelte";
     import Button from '$lib/components/forms/Button.svelte';
-
     import { PUBLIC_HOST_API } from '$env/static/public';
-    import {slugify} from '$lib/utils/slugify';
+    import { slugify } from '$lib/utils/slugify';
 
-    export let data;
+    let { data } = $props();
     const module = data.donnees;
 
     $store.nav = 'formations';
@@ -259,7 +258,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .description {
         margin-top: $gap;

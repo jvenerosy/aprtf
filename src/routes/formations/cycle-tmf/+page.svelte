@@ -1,9 +1,9 @@
 <script>
     import { store } from '$lib/stores/Store';
-	import FormationNav from "$lib/components/FormationNav.svelte";
-	import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
+    import FormationNav from "$lib/components/FormationNav.svelte";
+    import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
 
-    export let data;
+    let { data } = $props();
     const modules = data.donnees;
 
     $store.nav = 'formations';
@@ -45,7 +45,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .description {
         margin-top: $gap;

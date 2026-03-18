@@ -8,13 +8,15 @@
 
     $store.nav = 'colloque';
 
-    export let data;
+    let { data, form = {} }: { data: any; form?: any } = $props();
     const colloque = data.colloque;
 
-    /** @type {import('./$types').ActionData} */
-    export let form: any = {};
-
-    $: step = form?.step ?? 1;
+    let step = $state(form?.step ?? 1);
+    $effect(() => {
+        if (form?.step !== undefined) {
+            step = form.step;
+        }
+    });
 
     function nextStep() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -26,13 +28,13 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    let handicap = form?.answer?.handicap ?? form?.handicap ?? '';
-    let handicapRythme = form?.answer?.handicapRythme ?? form?.handicapRythme ?? '';
-    let handicapPedago =  form?.answer?.handicapPedago ?? form?.handicapPedago ?? '';
-    let finance = form?.answer?.finance ?? form?.finance ?? 0;
-    let cadre = form?.answer?.cadre ?? form?.cadre ?? '';
-    let context = form?.answer?.context ?? form?.context ?? '';
-    let level = form?.answer?.level ?? form?.level ?? '';
+    let handicap = $state(form?.answer?.handicap ?? form?.handicap ?? '');
+    let handicapRythme = $state(form?.answer?.handicapRythme ?? form?.handicapRythme ?? '');
+    let handicapPedago = $state(form?.answer?.handicapPedago ?? form?.handicapPedago ?? '');
+    let finance = $state(form?.answer?.finance ?? form?.finance ?? 0);
+    let cadre = $state(form?.answer?.cadre ?? form?.cadre ?? '');
+    let context = $state(form?.answer?.context ?? form?.context ?? '');
+    let level = $state(form?.answer?.level ?? form?.level ?? '');
 
 
 </script>
@@ -200,7 +202,7 @@
                                             <div class="column"></div>
                                             <div class="column is-narrow">
                                                 <div class="buttons">
-                                                    <Button text="Suivant →" on:click={nextStep} />
+                                                    <Button text="Suivant →" onclick={nextStep} />
                                                 </div>
                                             </div>
                                         </div>
@@ -353,7 +355,7 @@
                                             <div class="column"></div>
                                             <div class="column is-narrow">
                                                 <div class="buttons">
-                                                    <Button theme="is-inverted" text="← Précédent" on:click={prevStep} />
+                                                    <Button theme="is-inverted" text="← Précédent" onclick={prevStep} />
                                                     <Button text="Suivant →" />
                                                 </div>
                                             </div>
@@ -445,7 +447,7 @@
                                             <div class="column"></div>
                                             <div class="column is-narrow">
                                                 <div class="buttons">
-                                                    <Button theme="is-inverted" text="← Précédent" on:click={prevStep} />
+                                                    <Button theme="is-inverted" text="← Précédent" onclick={prevStep} />
                                                     <Button text="Suivant →" />
                                                 </div>
                                             </div>
@@ -626,7 +628,7 @@
                                             <div class="column"></div>
                                             <div class="column is-narrow">
                                                 <div class="buttons">
-                                                    <Button theme="is-inverted" text="← Précédent" on:click={prevStep} />
+                                                    <Button theme="is-inverted" text="← Précédent" onclick={prevStep} />
                                                     <Button text="Suivant →"  />
                                                 </div>
                                             </div>
@@ -725,7 +727,7 @@
                                             <div class="column"></div>
                                             <div class="column is-narrow">
                                                 <div class="buttons">
-                                                    <Button theme="is-inverted" text="← Précédent" on:click={prevStep} />
+                                                    <Button theme="is-inverted" text="← Précédent" onclick={prevStep} />
                                                     <Button text="Envoyer" />
                                                 </div>
                                             </div>
@@ -775,7 +777,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../../styles/variables.scss';
+    @use '../../../../styles/variables.scss' as *;
 
     :global(.description p) {
         margin-bottom: 20px;

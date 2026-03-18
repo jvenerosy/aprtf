@@ -1,15 +1,16 @@
 <script lang="ts">
-    export let slug: string;
-    export let titre: string;
-    export let description_short: string;
-    export let statut: string;
-    export let mea: string;
+    import { PUBLIC_HOST_API } from '$env/static/public';
 
-	import { PUBLIC_HOST_API } from '$env/static/public';
+    let { slug, titre, description_short, statut, mea }: {
+        slug: string;
+        titre: string;
+        description_short: string;
+        statut: string;
+        mea: string;
+    } = $props();
 
-    let statutValue:string = statut === 'after' ? 'Inscriptions closes' : statut === 'during' ? 'Inscriptions ouvertes' : 'À venir';
-
-    const link = slug === 'cycle-1-therapie-familiale' ? '/formations/cycle-1' : `/formations/modules/${slug}`;
+    const statutValue = $derived(statut === 'after' ? 'Inscriptions closes' : statut === 'during' ? 'Inscriptions ouvertes' : 'À venir');
+    const link = $derived(slug === 'cycle-1-therapie-familiale' ? '/formations/cycle-1' : `/formations/modules/${slug}`);
 </script>
 <nav data-sveltekit-reload class="column is-4">
     <a href={link}>
@@ -29,7 +30,7 @@
 </nav>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .card {
         border-radius: $gap;

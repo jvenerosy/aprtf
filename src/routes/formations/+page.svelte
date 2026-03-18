@@ -3,11 +3,8 @@
     import FormationNav from "$lib/components/FormationNav.svelte";
     import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
 
-    export let data;
-    let modules = data.donnees;
-
-    // Trier les modules par le champ 'order'
-    modules = modules.sort((a, b) => a.order - b.order);
+    let { data } = $props();
+    const modules = $derived([...data.donnees].sort((a, b) => a.order - b.order));
 
     $store.nav = 'formations';
     $store.sousnav = 'description';
@@ -92,7 +89,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../styles/variables.scss';
+    @use '../../styles/variables.scss' as *;
 
     .title {
         font-family: $family-title;

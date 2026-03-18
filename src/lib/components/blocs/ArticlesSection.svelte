@@ -2,19 +2,20 @@
     import ArticleSlider from './ArticleSlider.svelte';
     import Button from '$lib/components/forms/Button.svelte';
 
-    export let articles: Array<{
+    type Article = {
         slug: string;
         titre: string;
         chapo: string;
         image: string;
         date_created: string;
         status: string;
-    }> = [];
+    };
 
-    // Filter only published articles and take first 3
-    $: publishedArticles = articles
-        .filter(article => article.status === 'published')
-        .slice(0, 3);
+    let { articles = [] }: { articles?: Article[] } = $props();
+
+    const publishedArticles = $derived(
+        articles.filter(article => article.status === 'published').slice(0, 3)
+    );
 </script>
 
 {#if publishedArticles.length > 0}
@@ -45,7 +46,7 @@
 {/if}
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .articles {
         padding-top: 60px;

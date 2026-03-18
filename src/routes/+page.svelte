@@ -3,7 +3,7 @@
     import ArticlesSection from '$lib/components/blocs/ArticlesSection.svelte';
     import { store } from '$lib/stores/Store';
 
-    export let data;
+    let { data } = $props();
 
     $store.nav = 'home';
     $store.slug = '/';
@@ -109,7 +109,7 @@
 <ArticlesSection articles={data.articles} />
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @use '../styles/variables.scss' as *;
 
     .title {
         font-family: $family-title;

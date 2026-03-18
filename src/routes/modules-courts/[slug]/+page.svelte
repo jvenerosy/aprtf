@@ -4,7 +4,7 @@
 
 	import { PUBLIC_HOST_API } from '$env/static/public';
 
-    export let data;
+    let { data } = $props();
     const colloque = data.donnees;
     const statut = data.statut;
     const lien_inscription = data.lien_inscription;
@@ -151,7 +151,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     :global(.description p) {
         margin-bottom: 20px;

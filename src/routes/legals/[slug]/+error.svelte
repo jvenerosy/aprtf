@@ -46,7 +46,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
     
     .title {
         font-family: $family-title;

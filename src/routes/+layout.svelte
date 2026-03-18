@@ -1,14 +1,16 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
-    import { store } from '$lib/stores/Store';
+	import { store } from '$lib/stores/Store';
 	import '../styles/global.scss';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
 	inject({ mode: dev ? 'development' : 'production' });
-	export let data;
+
+	let { data, children }: { data: any; children: Snippet } = $props();
 	const seo = data.donnees;
 	const legals = data.legals;
 
@@ -51,12 +53,12 @@
 <Header />
 
 <main class="slot" id="main-content">
-	<slot />
+	{@render children()}
 </main>
 <Footer {legals} />
 
 <style lang="scss">
-	@import '../styles/variables.scss';
+	@use '../styles/variables.scss' as *;
 	.slot {
 		padding-top: 50px;
 		

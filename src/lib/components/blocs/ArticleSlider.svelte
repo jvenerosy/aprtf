@@ -1,13 +1,14 @@
 <script lang="ts">
-    export let slug: string;
-    export let titre: string;
-    export let chapo: string;
-    export let image: string;
-    export let date_created: string;
-
     import { PUBLIC_HOST_API } from '$env/static/public';
 
-    // Format the date
+    let { slug, titre, chapo, image, date_created }: {
+        slug: string;
+        titre: string;
+        chapo: string;
+        image: string;
+        date_created: string;
+    } = $props();
+
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('fr-FR', {
@@ -35,7 +36,7 @@
 </div>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
 
     .card {
         border-radius: $gap;

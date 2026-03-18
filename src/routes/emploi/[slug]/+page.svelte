@@ -1,12 +1,11 @@
 <script lang="ts">
     import Button from '$lib/components/forms/Button.svelte';
     import { store } from '$lib/stores/Store';
+    import { PUBLIC_HOST_API } from '$env/static/public';
 
-	import { PUBLIC_HOST_API } from '$env/static/public';
-    
-    export let data;
+    let { data } = $props();
     const emploi = data.donnees;
-    
+
     $store.nav = 'emploi';
 </script>
 
@@ -34,7 +33,7 @@
 </section>
 
 <style lang="scss">
-    @import '../../../styles/variables.scss';
+    @use '../../../styles/variables.scss' as *;
     
     :global(.description p) {
         margin-bottom: 20px;
