@@ -78,7 +78,6 @@ export const actions = {
             const result = contactSchemaStep1.parse(formStep1);
             answer = Object.assign(answer, formStep1);
             cookies.set('form_data', JSON.stringify(answer), { path: '/', maxAge: 3600 });
-            console.log(answer);
 
             const { firstname, lastname, phone, email, address, postalCode, city } = formStep1;
 			return {
@@ -95,7 +94,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
 			const { firstname, lastname, phone, email, address, postalCode, city } = formStep1;
 			return {
 				firstname,
@@ -145,7 +143,6 @@ export const actions = {
             answer = Object.assign(answer, formStep2);
             answer.handicapAdapt = handicapAdapt;
             cookies.set('form_data', JSON.stringify(answer), { path: '/', maxAge: 3600 });
-            console.log(answer);
 
             const { connu, profession, etablissement, service } = formStep2;
 			return {
@@ -159,8 +156,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
-            console.log(formStep2);
 			const { connu, profession, etablissement, service } = formStep2;
 			return {
 				connu,
@@ -196,7 +191,6 @@ export const actions = {
             const result = contactSchemaStep3.parse(formStep3);
             answer = Object.assign(answer, formStep3);
             cookies.set('form_data', JSON.stringify(answer), { path: '/', maxAge: 3600 });
-            console.log(answer);
 
             const { objectif, number, connaissance } = formStep3;
 			return {
@@ -209,8 +203,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
-            console.log(formStep3);
 			const { objectif, number, connaissance } = formStep3;
 			return {
 				objectif,
@@ -243,7 +235,6 @@ export const actions = {
             answer.context = context;
             answer.cadre = cadre;
             cookies.set('form_data', JSON.stringify(answer), { path: '/', maxAge: 3600 });
-            console.log(answer);
             
             const { objectif, number, connaissance } = formStep4;
 			return {
@@ -256,8 +247,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(context);
-            console.log(errors);
 			const { objectif, number, connaissance } = formStep4;
 			return {
 				objectif,
@@ -275,7 +264,6 @@ export const actions = {
         const formStep5 = Object.fromEntries(formData);
         
         answer = Object.assign(answer, formStep5);
-        console.log(JSON.stringify(answer));
         try {
             const response = await fetch(endpoint, {
                 method: "POST",

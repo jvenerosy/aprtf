@@ -8,10 +8,19 @@
     /** @type {import('./$types').ActionData} */
     let { form = {} }: { form?: any } = $props();
 
-    let step = $state(form?.step ?? 2);
+    let step = $state(2);
+    let orientation: string = $state('');
+    let demande: string = $state('');
+
     $effect(() => {
         if (form?.step !== undefined) {
             step = form.step;
+        }
+        if (form?.answer?.orientation || form?.orientation) {
+            orientation = form?.answer?.orientation ?? form?.orientation ?? '';
+        }
+        if (form?.answer?.demande || form?.demande) {
+            demande = form?.answer?.demande ?? form?.demande ?? '';
         }
     });
 
@@ -20,9 +29,6 @@
         step--;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    let orientation: string = $state(form?.answer?.orientation ?? form?.orientation ?? '');
-    let demande: string = $state(form?.answer?.demande ?? form?.demande ?? '');
 
     let addFamilyMember = $state({
         role: '',

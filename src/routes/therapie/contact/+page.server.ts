@@ -62,7 +62,6 @@ export const actions = {
                 path: '/',
                 maxAge: 60 * 60 * 24
             });
-            console.log(sessionData);
 
             const { orientation, orienteby, demande, therapeute } = form;
 			return {
@@ -76,7 +75,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
 			const { orientation, orienteby, demande, therapeute } = form;
 			return {
 				orientation,
@@ -118,7 +116,6 @@ export const actions = {
                 path: '/',
                 maxAge: 60 * 60 * 24
             });
-            console.log(sessionData);
 
             const { family, stranger } = form;
 			return {
@@ -130,7 +127,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
 			const { family, stranger } = form;
 			return {
 				family,
@@ -187,7 +183,6 @@ export const actions = {
             const result = contactSchema.parse(form);
             // Mettre à jour les données de session avec les dernières données
             sessionData = Object.assign(sessionData, form);
-            console.log(JSON.stringify(sessionData));
 
             try {
                 const response = await fetch(endpoint, {
@@ -234,7 +229,6 @@ export const actions = {
             
         } catch (err: any) {
             const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
 			const { problem, firstname, lastname, place, email, phone, address, postalcode, city } = form;
 			return {
 				problem,

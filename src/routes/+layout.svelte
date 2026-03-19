@@ -6,8 +6,8 @@
 	import '../styles/global.scss';
 
 	let { data, children }: { data: any; children: Snippet } = $props();
-	const seo = data.donnees;
-	const legals = data.legals;
+	const seo = $derived(data.donnees);
+	const legals = $derived(data.legals);
 </script>
 
 <svelte:head>

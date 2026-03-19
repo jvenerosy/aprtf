@@ -58,7 +58,6 @@ export const actions = {
             }
 		} catch (err: any) {
 			const { fieldErrors: errors } = err.flatten();
-            console.log(errors);
 			const { firstname, lastname, raison, email, message } = formData;
 			return {
 				firstname,

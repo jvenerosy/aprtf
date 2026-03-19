@@ -217,13 +217,6 @@
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .linkedin-title {
-        font-size: $size-regular;
-        font-weight: bold;
-        margin-bottom: calc($gap);
-        color: $inverted;
-    }
-
     .social-content {
         display: flex;
         flex-direction: column;
@@ -287,35 +280,34 @@
             flex-shrink: 0;
             margin-right:  calc($gap/2);
 
-            &:not(.spotify):not(.arte) {
-                background-color: #0077b5;
-            }
-
-            &.spotify {
-                background-color: #1db954;
-            }
-
-            &.arte {
-                background-color: #e84a28;
-            }
-
-            &.newsletter {
-                background-color: $tertiary;
-            }
+            background-color: #0077b5;
 
             svg {
                 color: white;
             }
         }
 
-        .profile-photo {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            margin-right: calc($gap/2);
+    }
+
+    .social-link .profile-photo {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-right: calc($gap/2);
+    }
+
+    .media-link .logo-container {
+        &.spotify {
+            background-color: #1db954;
+        }
+        &.arte {
+            background-color: #e84a28;
+        }
+        &.newsletter {
+            background-color: $tertiary;
         }
     }
 </style>
