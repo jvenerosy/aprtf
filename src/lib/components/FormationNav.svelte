@@ -19,12 +19,12 @@
 </section>
 <section class="section sous-nav is-paddingless">
     <ul>
-        <li><a class:active={$store.sousnav === 'description'} href="/formations">Description</a></li>
-        <li><a class:active={$store.sousnav === 'tarifs'} href="/formations/tarifs">Tarifs</a></li>
-        <li><a class:active={$store.sousnav === 'cycle-1'} href="/formations/cycle-1">Cycle 1</a></li>
-        <li><a class:active={$store.sousnav === 'cycle-2'} href="/formations/cycle-2">Cycle 2</a></li>
-        <li><a class:active={$store.sousnav === 'cycle-tmf'} href="/formations/cycle-tmf">Cycle TMF</a></li>
-        <li><a class:active={$store.sousnav === 'hors-cycle'} href="/formations/hors-cycle">Hors Cycles</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'description'} href="/formations">Description</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'tarifs'} href="/formations/tarifs">Tarifs</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'cycle-1'} href="/formations/cycle-1">Cycle 1</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'cycle-2'} href="/formations/cycle-2">Cycle 2</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'cycle-tmf'} href="/formations/cycle-tmf">Cycle TMF</a></li>
+        <li><a data-sveltekit-noscroll class:active={$store.sousnav === 'hors-cycle'} href="/formations/hors-cycle">Hors Cycles</a></li>
     </ul>
 </section>
 

@@ -215,8 +215,9 @@
                     }
                 }
                 .accordion-description {
-                    height: auto;
-                    visibility: visible;
+                    max-height: 500px;
+                    opacity: 1;
+                    padding-bottom: $gap;
                 }
             }
         }
@@ -229,15 +230,17 @@
             align-items: center;
 
             span {
-                transition: all .3s ease;
+                transition: transform .3s ease;
                 margin-left: auto;
             }
         }
 
         .accordion-description {
-            padding: 0 $gap $gap;
-            height: 0;
-            visibility: hidden;
+            padding: 0 $gap;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height .3s ease, opacity .3s ease, padding-bottom .3s ease;
 
             p {
                 margin-bottom: $gap;
