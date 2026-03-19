@@ -25,7 +25,7 @@
             </div>
             <div class="column">
                 <picture>
-                    <img src="images/cycles.png" alt="" />
+                    <img src="images/cycles.webp" alt="" />
                 </picture>
             </div>
         </div>

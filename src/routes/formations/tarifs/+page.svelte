@@ -6,7 +6,7 @@
     import { slugify } from '$lib/utils/slugify';
 
     let { data } = $props();
-    const modules = data.donnees;
+    const modules = $derived(data.donnees);
 
     $store.nav = 'formations';
     $store.sousnav = 'tarifs';

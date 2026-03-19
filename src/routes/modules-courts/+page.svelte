@@ -3,7 +3,7 @@
     import ColloqueSlider from '$lib/components/blocs/ColloqueSlider.svelte';
 
     let { data } = $props();
-    const colloques = data.donnees;
+    const colloques = $derived(data.donnees);
 
     $store.nav = 'colloque';
     $store.slug = '/modules-courts';

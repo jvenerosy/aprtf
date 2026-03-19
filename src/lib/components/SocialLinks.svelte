@@ -20,13 +20,13 @@
                                 </div>
                                 <div class="social-link">
                                     <a href="https://www.linkedin.com/in/no%C3%ABl-pommepuy-4159b154/" target="_blank" rel="noopener noreferrer">
-                                        <img src="/images/photos/noel-pommepuy.png" srcset="/images/photos/noel-pommepuy@2x.png 2x" alt="Noël Pommepuy" class="profile-photo">
+                                        <img src="/images/photos/noel-pommepuy.webp" srcset="/images/photos/noel-pommepuy@2x.webp 2x" alt="" class="profile-photo" width="40" height="40" loading="lazy">
                                         <span>Noël Pommepuy</span>
                                     </a>
                                 </div>
                                 <div class="social-link">
                                     <a href="https://www.linkedin.com/in/marie-christine-beaucousin-7b06b6362/" target="_blank" rel="noopener noreferrer">
-                                        <img src="/images/photos/marie-christine-beaucousin.png" srcset="/images/photos/marie-christine-beaucousin@2x.png 2x" alt="Marie Christine Beaucousin" class="profile-photo">
+                                        <img src="/images/photos/marie-christine-beaucousin.webp" srcset="/images/photos/marie-christine-beaucousin@2x.webp 2x" alt="" class="profile-photo" width="40" height="40" loading="lazy">
                                         <span>Marie Christine Beaucousin</span>
                                     </a>
                                 </div>

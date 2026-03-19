@@ -119,18 +119,6 @@
         }
     }
 
-    .newsletter-iframe {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-        border-radius: 8px;
-        
-        @media screen and (max-width: 768px) {
-            width: 100%;
-            height: 400px;
-        }
-    }
-
     .newsletter-info {
         margin-top: 3rem;
         

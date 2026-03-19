@@ -21,7 +21,7 @@
 				class="rounded"
 				style={`background-image: url(${PUBLIC_HOST_API}/assets/${photo}/${slugName}?width=150&height=150&format=webp);`}
 				title={name}
-			/>
+			></div>
 			<p class="name">{name} {lastname}</p>
 			{#if date}
 				<p class="date">{date}</p>

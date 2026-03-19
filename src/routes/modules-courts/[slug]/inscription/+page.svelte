@@ -8,14 +8,29 @@
 
     $store.nav = 'colloque';
 
-    let { data, form = {} }: { data: any; form?: any } = $props();
-    const colloque = data.colloque;
+    let { data, form: formData = {} }: { data: any; form?: any } = $props();
+    const colloque = $derived(data.colloque);
+    const formStep = $derived(formData?.step);
+    const formAnswer = $derived(formData?.answer ?? formData ?? {});
 
-    let step = $state(form?.step ?? 1);
+    let step = $state(1);
+    let handicap = $state('');
+    let handicapRythme = $state('');
+    let handicapPedago = $state('');
+    let finance = $state(0);
+    let cadre = $state('');
+    let context = $state('');
+    let level = $state('');
+
     $effect(() => {
-        if (form?.step !== undefined) {
-            step = form.step;
-        }
+        if (formStep !== undefined) step = formStep;
+        handicap = formAnswer.handicap ?? '';
+        handicapRythme = formAnswer.handicapRythme ?? '';
+        handicapPedago = formAnswer.handicapPedago ?? '';
+        finance = formAnswer.finance ?? 0;
+        cadre = formAnswer.cadre ?? '';
+        context = formAnswer.context ?? '';
+        level = formAnswer.level ?? '';
     });
 
     function nextStep() {
@@ -27,14 +42,6 @@
         step--;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    let handicap = $state(form?.answer?.handicap ?? form?.handicap ?? '');
-    let handicapRythme = $state(form?.answer?.handicapRythme ?? form?.handicapRythme ?? '');
-    let handicapPedago = $state(form?.answer?.handicapPedago ?? form?.handicapPedago ?? '');
-    let finance = $state(form?.answer?.finance ?? form?.finance ?? 0);
-    let cadre = $state(form?.answer?.cadre ?? form?.cadre ?? '');
-    let context = $state(form?.answer?.context ?? form?.context ?? '');
-    let level = $state(form?.answer?.level ?? form?.level ?? '');
 
 
 </script>
@@ -758,7 +765,7 @@
                 <div class="rows">
                     <div class="row">
                         <picture>
-                            <img class="mea" src="{`${PUBLIC_HOST_API}/assets/${colloque.illustration_colloque}?width=400&height=300&format=webp`}" alt="">
+                            <img class="mea" src="{`${PUBLIC_HOST_API}/assets/${colloque.illustration_colloque}?width=400&height=300&format=webp`}" alt={colloque.titre} width="400" height="300">
                         </picture>
                     </div>
                     <div class="row">

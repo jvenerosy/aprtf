@@ -24,7 +24,7 @@
         <div class="card is-fullheight">
             <div class="card-image">
                 <figure class="image">
-                    <img src="{`${PUBLIC_HOST_API}/assets/${image}?width=400&height=300&format=webp`}" alt={titre}>
+                    <img src="{`${PUBLIC_HOST_API}/assets/${image}?width=400&height=300&format=webp`}" alt={titre} width="400" height="300" loading="lazy">
                 </figure>
             </div>
             <div class="card-content">
@@ -52,14 +52,6 @@
     .card-content {
         position: relative;
         padding: $gap;
-    }
-
-    .date {
-        font-size: $size-small;
-        color: $grey;
-        margin-bottom: calc($gap/2);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 
     .titre {

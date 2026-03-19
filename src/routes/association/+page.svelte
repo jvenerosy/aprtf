@@ -4,7 +4,7 @@
     import SocialLinks from '$lib/components/SocialLinks.svelte';
 
     let { data } = $props();
-    const membres = data.donnees;
+    const membres = $derived(data.donnees);
 
     $store.nav = 'association';
     $store.slug = '/association';
@@ -142,11 +142,6 @@
                 filter: brightness(0) saturate(100%) invert(23%) sepia(91%) saturate(4339%) hue-rotate(243deg) brightness(100%) contrast(98%);
             }
         }
-    }
-
-    hr {
-        max-width: 260px;
-        margin: calc($gap*2) auto;
     }
 
     .bloc {

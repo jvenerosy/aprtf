@@ -7,7 +7,9 @@
     let { data } = $props();
 
     $store.nav = 'articles';
-    $store.slug = `/articles/${data.article.slug}`;
+    $effect(() => {
+        $store.slug = `/articles/${data.article.slug}`;
+    });
 
     // Format the date
     const formatDate = (dateString: string) => {

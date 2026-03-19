@@ -4,7 +4,7 @@
     import { PUBLIC_HOST_API } from '$env/static/public';
 
     let { data } = $props();
-    const emploi = data.donnees;
+    const emploi = $derived(data.donnees);
 
     $store.nav = 'emploi';
 </script>

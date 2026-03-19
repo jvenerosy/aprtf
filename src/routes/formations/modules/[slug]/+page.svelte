@@ -9,15 +9,17 @@
     import {slugify} from '$lib/utils/slugify';
 
     let { data } = $props();
-    const modules = data.donnees;
-    const module = data.module;
+    const modules = $derived(data.donnees);
+    const module = $derived(data.module);
 
-    const disabled = module.statut !== 'during' ? 'disabled' : '';
+    const disabled = $derived(module.statut !== 'during' ? 'disabled' : '');
 
-    
+
     $store.nav = 'formations';
-    $store.sousnav = module.type;
     $store.slug = '/formations/cycle-2';
+    $effect(() => {
+        $store.sousnav = module.type;
+    });
 </script>
 
 <svelte:head>

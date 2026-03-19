@@ -42,7 +42,7 @@
             <div class="column is-size-1">
                 <div class="logo-qualiopi">
                     <a href="https://bo.aprtfformations.fr/assets/6c91a3f5-5c20-440c-9a86-4ec0bb0a49d5/certification-qualiopi-rnq-3864.pdf" class="link">
-                        <img src="/images/logo-qualiopi.jpg" alt="Qualiopi Processus certifié">
+                        <img src="/images/logo-qualiopi.webp" alt="Qualiopi Processus certifié" width="200" height="107">
                     </a>
                 </div>
                 <p class="parag parag--qualiopi">
@@ -69,13 +69,13 @@
                             </div>
                             <div class="social-link">
                                 <a href="https://www.linkedin.com/in/no%C3%ABl-pommepuy-4159b154/" target="_blank" rel="noopener noreferrer">
-                                    <img src="/images/photos/noel-pommepuy.png" srcset="/images/photos/noel-pommepuy@2x.png 2x" alt="Noël Pommepuy" class="profile-photo">
+                                    <img src="/images/photos/noel-pommepuy.webp" srcset="/images/photos/noel-pommepuy@2x.webp 2x" alt="" class="profile-photo" width="20" height="20" loading="lazy">
                                     Noël Pommepuy
                                 </a>
                             </div>
                             <div class="social-link">
                                 <a href="https://www.linkedin.com/in/marie-christine-beaucousin-7b06b6362/" target="_blank" rel="noopener noreferrer">
-                                    <img src="/images/photos/marie-christine-beaucousin.png" srcset="/images/photos/marie-christine-beaucousin@2x.png 2x" alt="Marie Christine Beaucousin" class="profile-photo">
+                                    <img src="/images/photos/marie-christine-beaucousin.webp" srcset="/images/photos/marie-christine-beaucousin@2x.webp 2x" alt="" class="profile-photo" width="20" height="20" loading="lazy">
                                     Marie Christine Beaucousin
                                 </a>
                             </div>

@@ -3,7 +3,7 @@
     import EmploiSlider from '$lib/components/blocs/EmploiSlider.svelte';
 
     let { data } = $props();
-    const emplois = data.emplois;
+    const emplois = $derived(data.emplois);
 
     $store.nav = 'emploi';
     $store.slug = '/emploi';

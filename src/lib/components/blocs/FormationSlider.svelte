@@ -17,7 +17,7 @@
         <div class="card is-fullheight">
             <div class="card-image">
                 <figure class="image">
-                    <img src="{`${PUBLIC_HOST_API}/assets/${mea}?width=400&height=300&format=webp`}" alt={titre}>
+                    <img src="{`${PUBLIC_HOST_API}/assets/${mea}?width=400&height=300&format=webp`}" alt={titre} width="400" height="300" loading="lazy">
                 </figure>
             </div>
             <div class="card-content">

@@ -4,7 +4,7 @@
     import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
 
     let { data } = $props();
-    const modules = data.donnees;
+    const modules = $derived(data.donnees);
 
     $store.nav = 'formations';
     $store.sousnav = 'hors-cycle';

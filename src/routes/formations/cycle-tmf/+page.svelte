@@ -4,7 +4,7 @@
     import FormationSlider from '$lib/components/blocs/FormationSlider.svelte';
 
     let { data } = $props();
-    const modules = data.donnees;
+    const modules = $derived(data.donnees);
 
     $store.nav = 'formations';
     $store.sousnav = 'cycle-tmf';
@@ -45,21 +45,4 @@
 </section>
 
 <style lang="scss">
-    @use '../../../styles/variables.scss' as *;
-
-    .infos {
-        .ref {
-            font-weight: bold;
-            &:not(:first-child) {
-                margin-top: calc($gap * 2);
-            }
-        }
-        .placement {
-            margin-top: -30px;
-        }
-    }
-
-    .stage {
-        align-items: end;
-    }
 </style>

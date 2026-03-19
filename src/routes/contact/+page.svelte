@@ -78,7 +78,7 @@
                                 Les formations sont assurées en présentiel.
                             </p>
                             <div class="access">
-                                <div id="widget-a11y-container" data-pk="06f342d1-3c2c-40c3-8c0d-658ad5515419" data-baseurl="https://acceslibre.beta.gouv.fr"></div> <a class="link" href="#" aria-haspopup="dialog" data-erp-pk="06f342d1-3c2c-40c3-8c0d-658ad5515419" aria-controls="dialog">Les locaux de l'APRTF sont accessibles aux personnes à mobilité réduite (PMR) par le 24 rue Marc Seguin, Paris 18e</a>
+                                <div id="widget-a11y-container" data-pk="06f342d1-3c2c-40c3-8c0d-658ad5515419" data-baseurl="https://acceslibre.beta.gouv.fr"></div> <button type="button" class="link" aria-haspopup="dialog" data-erp-pk="06f342d1-3c2c-40c3-8c0d-658ad5515419" aria-controls="dialog">Les locaux de l'APRTF sont accessibles aux personnes à mobilité réduite (PMR) par le 24 rue Marc Seguin, Paris 18e</button>
                             </div>
                         </div>
                     </div>
@@ -117,6 +117,17 @@
         font-weight: bold;
         color: $tertiary;
         text-decoration: underline;
+
+        button.link {
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+            text-align: left;
+        }
     }
 
     .title {

@@ -159,11 +159,6 @@
         margin-bottom: $gap;
         font-size: $size-regular;
 
-        &.is-3 {
-            font-weight: bold;
-            text-align: center;
-            font-size: $size-large;
-        }
         &.highlighted{
             border-left: 3px $tertiary solid;
             padding-left: 10px;
@@ -178,15 +173,6 @@
                 color: inherit;
             }
         }
-    }
-    .name {
-        font-size: $size-large;
-        font-weight: 600;
-        margin-bottom: $gap;
-    }
-
-    .links {
-        margin-top: 20px;
     }
     .list{
         list-style: inside disc;

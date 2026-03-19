@@ -5,9 +5,9 @@
 	import { PUBLIC_HOST_API } from '$env/static/public';
 
     let { data } = $props();
-    const colloque = data.donnees;
-    const statut = data.statut;
-    const lien_inscription = data.lien_inscription;
+    const colloque = $derived(data.donnees);
+    const statut = $derived(data.statut);
+    const lien_inscription = $derived(data.lien_inscription);
 
     $store.nav = 'colloque';
 </script>
@@ -55,7 +55,7 @@
                 <div class="rows">
                     <div class="row">
                         <picture>
-                            <img class="mea" src="{`${PUBLIC_HOST_API}/assets/${colloque.illustration_colloque}`}?width=400&height=300&format=webp" alt="">
+                            <img class="mea" src="{`${PUBLIC_HOST_API}/assets/${colloque.illustration_colloque}`}?width=400&height=300&format=webp" alt={colloque.titre} width="400" height="300" loading="lazy">
                         </picture>
                     </div>
                     <div class="row">
