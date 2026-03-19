@@ -4,17 +4,10 @@
 	import Header from "$lib/components/Header.svelte";
 	import { store } from '$lib/stores/Store';
 	import '../styles/global.scss';
-	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
-	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-
-	inject({ mode: dev ? 'development' : 'production' });
 
 	let { data, children }: { data: any; children: Snippet } = $props();
 	const seo = data.donnees;
 	const legals = data.legals;
-
-	injectSpeedInsights();
 </script>
 
 <svelte:head>
@@ -38,15 +31,6 @@
 	<meta name="twitter:title" content="{item.title}" />
 	<meta name="twitter:site" content="@Aprtf" />
 	<meta name="twitter:creator" content="@Aprtf" />
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-73003ZEMB2"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-73003ZEMB2');
-	</script>
 	{/if}
 	{/each}
 </svelte:head>

@@ -1,36 +1,9 @@
 import { z } from 'zod';
 import validator from 'validator';
 import { PUBLIC_HOST_API } from '$env/static/public';
-import { DIRECTUS_EMAIL, DIRECTUS_PASSWORD } from '$env/static/private';
+import { DIRECTUS_TOKEN } from '$env/static/private';
 
 const endpoint = `${PUBLIC_HOST_API}/items/inscription_therapie`;
-const authEndpoint = `${PUBLIC_HOST_API}/auth/login`;
-
-// Fonction pour obtenir un token d'accès Directus
-async function getDirectusToken() {
-    try {
-        const response = await fetch(authEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: DIRECTUS_EMAIL,
-                password: DIRECTUS_PASSWORD,
-            }),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Erreur d'authentification: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return data.data.access_token;
-    } catch (error) {
-        console.error('Erreur lors de l\'authentification Directus:', error);
-        throw error;
-    }
-}
 
 //validation du formulaire
 /** @type {import('./$types').Actions} */
@@ -217,14 +190,11 @@ export const actions = {
             console.log(JSON.stringify(sessionData));
 
             try {
-                // Obtenir le token d'authentification
-                const token = await getDirectusToken();
-                
                 const response = await fetch(endpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`,
+                        "Authorization": `Bearer ${DIRECTUS_TOKEN}`,
                     },
                     body: JSON.stringify(sessionData),
                 });
