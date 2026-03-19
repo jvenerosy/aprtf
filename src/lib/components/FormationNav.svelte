@@ -31,17 +31,11 @@
 <style lang="scss">
     @use '../../styles/variables.scss' as *;
 
-    .title {
-        font-family: $family-title;
+    .title.is-1 {
+        text-align: center;
 
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-                text-align: left;
-            }
+        @media screen and (min-width: $b-desktop) {
+            text-align: left;
         }
     }
 

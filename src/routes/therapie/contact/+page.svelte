@@ -528,24 +528,11 @@
         }
     }
 
-    .title {
-        font-family: $family-title;
+    .title.is-1 {
+        text-align: center;
 
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-                text-align: left;
-            }
-        }
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
+        @media screen and (min-width: $b-desktop) {
+            text-align: left;
         }
     }
 

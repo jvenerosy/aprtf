@@ -111,27 +111,11 @@
 <style lang="scss">
     @use '../styles/variables.scss' as *;
 
-    .title {
-        font-family: $family-title;
+    .title.is-1 {
+        text-align: center;
 
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-                text-align: left;
-            }
-        }
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-        &.is-3 {
-            font-size: $size-title-3;
+        @media screen and (min-width: $b-desktop) {
+            text-align: left;
         }
     }
 
@@ -147,15 +131,11 @@
         padding-top: 60px;
         padding-bottom: 60px;
 
-        .title {
-            color: $inverted;
-        }
-        .subtitle {
+        .title, .subtitle {
             color: $inverted;
         }
 
         .box {
-            background: -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
             background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
             box-shadow: none;
             color: $inverted;
@@ -170,10 +150,6 @@
     .bloc {
         text-align: center;
         margin-bottom: calc($gap*2);
-    }
-
-    .is-fullheight {
-        height: 100%;
     }
 
     .links {

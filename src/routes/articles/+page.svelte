@@ -53,21 +53,10 @@
         padding-bottom: 60px;
     }
 
-    .title {
-        font-family: $family-title;
-        font-size: $size-title-1;
-        color: $primary-dark;
-        text-align: center;
-
-        @media screen and (min-width: $b-desktop) {
-            font-size: $size-title-1-desktop;
+    .bloc {
+        .subtitle {
+            margin-bottom: calc($gap*2);
         }
-    }
-
-    .subtitle {
-        color: $grey;
-        margin-bottom: calc($gap*2);
-        text-align: center;
     }
 
     .bloc {

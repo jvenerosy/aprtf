@@ -55,18 +55,10 @@
     }
 
     .title {
-        font-family: $family-title;
-        font-size: $size-title-2;
-        color: $primary-dark;
         margin-bottom: calc($gap/2);
-
-        @media screen and (min-width: $b-desktop) {
-            font-size: $size-title-2-desktop;
-        }
     }
 
     .subtitle {
-        color: $grey;
         margin-bottom: calc($gap*2);
     }
 

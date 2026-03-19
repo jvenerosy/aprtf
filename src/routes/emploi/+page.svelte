@@ -45,41 +45,15 @@
 <style lang="scss">
     @use '../../styles/variables.scss' as *;
 
-    .container {
-        &.is-max-small {
-            @media screen and (min-width: $b-desktop) {
-                max-width: 60% !important;
-            }
-        }
-    }
-
     .top {
         background: $grey-light;
-        color: $primary;
         padding-top: 60px;
         padding-bottom: 60px;
     }
 
-    .title {
-        font-family: $family-title;
-        &.is-2 {
-            font-size: $size-title-2;
-            
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-    }
-    
-    .text {
-        text-align: left;
-        margin-bottom: $gap;
-        font-size: $size-regular;
-
-        &.visible {
-            font-weight: bold;
-            font-size: $size-large;
-        }
+    .text.visible {
+        font-weight: bold;
+        font-size: $size-large;
     }
 
     .colloques {
@@ -90,5 +64,4 @@
         text-align: center;
         margin-bottom: calc($gap*2);
     }
-
 </style>

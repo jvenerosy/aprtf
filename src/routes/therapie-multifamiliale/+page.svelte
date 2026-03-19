@@ -141,29 +141,17 @@
         padding-top: 60px;
         padding-bottom: 60px;
     }
-    .is-fullheight{
-        height: 100%;
-    }
     .title {
-        font-family: $family-title;
-
         &.is-1 {
-            font-size: $size-title-1;
             text-align: center;
             margin-bottom: calc($gap*2);
 
             @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
                 text-align: left;
             }
         }
         &.is-2 {
-            font-size: $size-title-2;
             margin-bottom: calc($gap*2);
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
         }
     }
     .text {

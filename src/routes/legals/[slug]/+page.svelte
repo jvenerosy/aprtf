@@ -21,32 +21,9 @@
 
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
-    
-    .legals {
 
-        .description {
-            margin-top: $gap;
-        }
-
-        :global(.description p) {
-            margin-bottom: 20px;
-        }
-
-        :global(.description ul) {
-            list-style-type: disc;
-            margin-left: $gap;
-        }
-
-        :global(.text a) {
-            color: $tertiary;
-        }
-        :global(.text a:hover) {
-            color: $tertiary;
-            text-decoration: underline;
-        }
-        :global(h3) {
-            font-weight: bold;
-            font-size: $size-large;
-        }
+    .legals :global(h3) {
+        font-weight: bold;
+        font-size: $size-large;
     }
 </style>

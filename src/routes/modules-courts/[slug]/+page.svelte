@@ -153,9 +153,6 @@
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
 
-    :global(.description p) {
-        margin-bottom: 20px;
-    }
     .infos {
         img.mea {
             display: block;
@@ -169,66 +166,19 @@
             }
         }
         .placement {
-            margin-top: calc($gap / 2);
             margin-bottom: -50px;
         }
     }
 
-    .title {
-        font-family: $family-title;
+    .title.is-1 {
+        text-align: center;
 
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-                text-align: left;
-            }
+        @media screen and (min-width: $b-desktop) {
+            text-align: left;
         }
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-        &.is-3 {
-            font-size: $size-title-3;
-        }
-    }
-
-    :global(.text a) {
-        color: $tertiary;
-    }
-    :global(.text a:hover) {
-        color: $tertiary;
-        text-decoration: underline;
-    }
-
-    .subtitle {
-        font-family: $family-regular;
-        font-weight: 600;
-    }
-
-    .utile {
-        background: $tertiary-light;
     }
 
     .tag {
-        font-size: $size-regular;
-        font-family: $family-regular;
-        font-weight: bold;
         margin: 0 0 $gap 0;
-
-        &.is-past {
-            background: $tag-past;
-        }
-        &.is-present {
-            background: $tag-present;
-        }
-        &.is-future {
-            background: $tag-future;
-        }
     }
 </style>

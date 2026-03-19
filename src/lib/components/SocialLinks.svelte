@@ -83,17 +83,8 @@
         }
     }
 
-    .title {
-        font-family: $family-title;
-        
-        &.is-2 {
-            font-size: $size-title-2;
-            margin-bottom: calc($gap*2);
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
+    .title.is-2 {
+        margin-bottom: calc($gap*2);
     }
 
     .social-content {

@@ -43,42 +43,4 @@
 </section>
 
 <style lang="scss">
-    @use '../../../styles/variables.scss' as *;
-
-    .description {
-        margin-top: $gap;
-    }
-
-    :global(.description p) {
-        margin-bottom: 20px;
-    }
-
-    :global(.description ul) {
-        list-style-type: disc;
-        margin-left: $gap;
-    }
-
-    :global(.text a) {
-        color: $tertiary;
-    }
-    :global(.text a:hover) {
-        color: $tertiary;
-        text-decoration: underline;
-    }
-    
-    .title {
-        font-family: $family-title;
-        &.is-2 {
-            font-size: $size-title-2;
-            
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-    }
-
-    .subtitle {
-        font-family: $family-regular;
-        font-weight: 600;
-    }
 </style>

@@ -260,34 +260,8 @@
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
 
-    .description {
-        margin-top: $gap;
-    }
-
-    :global(.description p) {
-        margin-bottom: 20px;
-    }
-
-    :global(.description ul) {
-        list-style-type: disc;
-        margin-left: $gap;
-    }
-
-    :global(.text a) {
-        color: $tertiary;
-    }
-    :global(.text a:hover) {
-        color: $tertiary;
-        text-decoration: underline;
-    }
-
-    .is-fullheight {
-        height: 100%;
-    }
-
     .infos {
         .placement {
-            margin-top: calc($gap / 2);
             margin-top: -30px;
         }
         .placement-tag {
@@ -301,92 +275,4 @@
         align-items: end;
     }
 
-    .title {
-        font-family: $family-title;
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-    }
-
-    .subtitle {
-        font-family: $family-regular;
-        font-weight: 600;
-    }
-    .tags {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        @media screen and (min-width: $b-desktop) {
-                justify-content: flex-start;
-            }
-    }
-
-    .tag {
-        border-radius: 19px;
-        padding: calc($gap/2) $gap;
-        display: inline-block;
-        text-align: center;
-        line-height: 24px;
-        height: auto;
-        font-weight: 600;
-        font-size: $size-regular;
-
-        &.rose {
-            background: $tag-past-light;
-        }
-        &.violet {
-            background: $tertiary-light;
-        }
-    }
-
-    .utile {
-        background: $tertiary-light;
-    }
-
-    .info {
-        border-left: 9px solid $tertiary;
-        margin-bottom: calc($gap*2);
-        p.intro {
-            font-style: italic;
-            &:not(:last-child) {
-                margin-bottom: $gap;
-            }
-        }
-    }
-
-    .groupe {
-        background: $grey-lighter;
-        .title {
-            text-align: center;
-        }
-
-        .annee {
-            font-size: $size-small;
-            color: $grey;
-        }
-        .training {
-            font-size: $size-small;
-            font-weight: 600;
-        }
-
-        ul {
-            margin: $gap 0 $gap $gap;
-            list-style-type: "→";
-            padding-bottom: $gap;
-            border-bottom: 2px solid $grey-light;
-
-            li {
-                padding-left: calc($gap/2);
-            }
-        }
-
-        .details {
-            font-size: $size-regular;
-            font-weight: 600;
-        }
-    }
 </style>

@@ -165,14 +165,8 @@
         }
 
         .title {
-            font-family: $family-title;
-            font-size: $size-title-1;
             margin-bottom: calc($gap);
             line-height: 1.2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-            }
         }
 
         .subtitle {
@@ -342,13 +336,10 @@
         background: $grey-lighter;
 
         .title {
-            font-family: $family-title;
-            color: $primary-dark;
             margin-bottom: calc($gap/2);
         }
 
         .subtitle {
-            color: $grey;
             margin-bottom: calc($gap * 2);
         }
     }</style>

@@ -102,22 +102,9 @@
 <style lang="scss">
     @use '../../styles/variables.scss' as *;
 
-    .container {
-        &.is-max-small {
-            @media screen and (min-width: $b-desktop) {
-                max-width: 60%;
-            }
-        }
-    }
-
-    .title {
-        font-family: $family-title;
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
+    .container.is-max-small {
+        @media screen and (min-width: $b-desktop) {
+            max-width: 60%;
         }
     }
 
@@ -130,7 +117,6 @@
     .text {
         text-align: left;
         margin-bottom: $gap;
-        font-size: $size-regular;
 
         &.is-3 {
             font-weight: bold;
@@ -141,22 +127,16 @@
 
     .association {
         background: $tertiary-light;
-        color: $primary;
         padding-top: 60px;
         padding-bottom: 60px;
 
-
-        .title {
-            color: $primary;
-        }
-        .subtitle {
+        .title, .subtitle {
             color: $primary;
         }
 
         .box {
             background: #F9F9FB80;
             box-shadow: none;
-            color: $primary;
 
             img {
                 filter: brightness(0) saturate(100%) invert(23%) sepia(91%) saturate(4339%) hue-rotate(243deg) brightness(100%) contrast(98%);
@@ -174,12 +154,7 @@
         margin-bottom: calc($gap*2);
     }
 
-    .is-fullheight {
-        height: 100%;
-    }
-
     .pedago {
         background: $grey-lighter;
     }
-
 </style>

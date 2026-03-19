@@ -48,46 +48,19 @@
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
     
-    .title {
-        font-family: $family-title;
-
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-            }
-        }
-        &.is-2 {
-            font-size: $size-title-2;
-
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-        &.is-3 {
-            font-size: $size-title-3;
-        }
-    }
-
     .error-page {
         padding-top: 60px;
         padding-bottom: 60px;
-        
+
         .error-title {
             color: #e74c3c;
             font-weight: bold;
             margin-bottom: 1rem;
         }
-        
+
         .bloc {
             text-align: center;
             margin-bottom: calc($gap*2);
-        }
-        
-        .is-fullheight {
-            height: 100%;
         }
         
         .links {

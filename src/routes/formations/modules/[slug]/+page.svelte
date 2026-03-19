@@ -171,33 +171,6 @@
 <style lang="scss">
     @use '../../../../styles/variables.scss' as *;
 
-
-    .description {
-        margin-top: $gap;
-    }
-
-    :global(.description p) {
-        margin-bottom: 20px;
-    }
-    
-    :global(.description ul) {
-        list-style-type: disc;
-        margin-left: $gap;
-    }
-    
-    :global(.description ol) {
-        margin-bottom: 20px;
-        margin-left: $gap;
-    }
-
-    :global(.text a) {
-        color: $tertiary;
-    }
-    :global(.text a:hover) {
-        color: $tertiary;
-        text-decoration: underline;
-    }
-
     .button-inscription {
         &:not(:last-child) {
             margin-right: $gap;
@@ -210,7 +183,6 @@
 
     .infos {
         .placement {
-            margin-top: calc($gap / 2);
             margin-top: -30px;
         }
         .placement-tag {
@@ -221,39 +193,5 @@
         .box {
             padding-bottom: calc($gap * 2);
         }
-    }
-    
-    .title {
-        font-family: $family-title;
-        &.is-2 {
-            font-size: $size-title-2;
-            
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-2-desktop;
-            }
-        }
-    }
-
-    .subtitle {
-        font-family: $family-regular;
-        font-weight: 600;
-    }
-    
-    .tag {
-        border-radius: 19px;
-        padding: calc($gap/2) $gap;
-        display: inline-block;
-        text-align: center;
-        line-height: 24px;
-        height: auto;
-        font-weight: 600;
-        font-size: $size-regular;
-        &.violet {
-            background: $tertiary-light;
-        }
-    }
-    
-    .utile {
-        background: $tertiary-light;
     }
 </style>

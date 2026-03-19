@@ -34,10 +34,7 @@
 
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
-    
-    :global(.description p) {
-        margin-bottom: 20px;
-    }
+
     :global(.description a) {
         color: $tertiary;
     }
@@ -45,33 +42,21 @@
     a {
         color: $tertiary;
     }
-    
+
     .link {
         margin-bottom: 30px;
         display: block;
     }
 
-    
     .title {
-        font-family: $family-title;
         margin-bottom: 50px;
-        
-        &.is-1 {
-            font-size: $size-title-1;
-            text-align: center;
-            
-            @media screen and (min-width: $b-desktop) {
-                font-size: $size-title-1-desktop;
-                text-align: left;
-            }
-        }
     }
 
-    :global(.text a) {
-        color: $tertiary;
-    }
-    :global(.text a:hover) {
-        color: $tertiary;
-        text-decoration: underline;
+    .title.is-1 {
+        text-align: center;
+
+        @media screen and (min-width: $b-desktop) {
+            text-align: left;
+        }
     }
 </style>
