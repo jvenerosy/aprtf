@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { onNavigate } from '$app/navigation';
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
 	import { store } from '$lib/stores/Store';
@@ -8,6 +9,18 @@
 	let { data, children }: { data: any; children: Snippet } = $props();
 	const seo = $derived(data.donnees);
 	const legals = $derived(data.legals);
+
+	// Transitions fluides entre pages (View Transitions API)
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -43,11 +56,37 @@
 
 <style lang="scss">
 	@use '../styles/variables.scss' as *;
+
 	.slot {
 		padding-top: 50px;
-		
+
 		@media screen and (min-width: $b-desktop) {
 			padding-top: 100px;
 		}
+	}
+
+	/* View Transitions - fade léger */
+	:global(::view-transition-old(root)),
+	:global(::view-transition-new(root)) {
+		animation-duration: 150ms;
+		animation-timing-function: ease-out;
+	}
+
+	:global(::view-transition-old(root)) {
+		animation-name: fade-out;
+	}
+
+	:global(::view-transition-new(root)) {
+		animation-name: fade-in;
+	}
+
+	@keyframes fade-out {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@keyframes fade-in {
+		from { opacity: 0; }
+		to { opacity: 1; }
 	}
 </style>

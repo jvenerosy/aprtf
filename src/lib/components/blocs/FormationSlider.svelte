@@ -12,7 +12,7 @@
     const statutValue = $derived(statut === 'after' ? 'Inscriptions closes' : statut === 'during' ? 'Inscriptions ouvertes' : 'À venir');
     const link = $derived(slug === 'cycle-1-therapie-familiale' ? '/formations/cycle-1' : `/formations/modules/${slug}`);
 </script>
-<nav data-sveltekit-reload class="column is-4">
+<div class="column is-4">
     <a href={link}>
         <div class="card is-fullheight">
             <div class="card-image">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </a>
-</nav>
+</div>
 
 <style lang="scss">
     @use '../../../styles/variables.scss' as *;
