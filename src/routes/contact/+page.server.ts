@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { PUBLIC_HOST_API } from '$env/static/public';
 import { DIRECTUS_TOKEN } from '$env/static/private';
 
+export const prerender = false;
+
 const endpoint = `${PUBLIC_HOST_API}/items/contact`;
 
 const contactSchema = z.object({

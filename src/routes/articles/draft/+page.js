@@ -3,6 +3,8 @@ import { readItems } from '@directus/sdk';
 import { error } from '@sveltejs/kit';
 import MarkdownIt from 'markdown-it';
 
+export const prerender = false;
+
 let md = new MarkdownIt();
 
 export async function load({ url }) {

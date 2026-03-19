@@ -5,6 +5,8 @@ import validator from 'validator';
 import { PUBLIC_HOST_API } from '$env/static/public';
 import { DIRECTUS_TOKEN } from '$env/static/private';
 
+export const prerender = false;
+
 const endpoint = `${PUBLIC_HOST_API}/items/inscriptions_colloques`;
 
 // affichage des données

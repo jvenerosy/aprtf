@@ -2,6 +2,7 @@ import { PUBLIC_HOST_API } from '$env/static/public';
 const seoEndpoint = `${PUBLIC_HOST_API}/items/page_seo`;
 const legalsEndpoint = `${PUBLIC_HOST_API}/items/legals`;
 
+export const prerender = true;
 
 export const load = async () => {
     // Récupérer les données SEO
