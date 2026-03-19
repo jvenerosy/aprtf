@@ -1,6 +1,16 @@
 @use "variables.scss" as *;
 @use "bulma/bulma";
 
+// Font fallback avec métriques ajustées pour éviter le CLS
+@font-face {
+  font-family: 'Frank Ruhl Libre Fallback';
+  src: local('Georgia');
+  size-adjust: 105%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 html {
   font-size: 16px;
 }

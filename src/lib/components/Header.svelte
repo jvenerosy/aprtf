@@ -108,11 +108,11 @@
         top: 0;
         left: 0;
         z-index: 100;
-
+        min-height: 50px;
 
         @media screen and (min-width: $b-desktop) {
             padding: $gap calc($gap*2);
-            height: auto;
+            min-height: 100px;
         }
 
         &.fixed {

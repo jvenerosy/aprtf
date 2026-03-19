@@ -20,7 +20,7 @@
             <div class="column">
                 <div class="box is-fullheight">
                     <picture>
-                        <img src="images/pictos/megaphone.svg" srcset="images/pictos/megaphone.svg 38w" width="38px" height="38px" alt="">
+                        <img src="images/pictos/megaphone.svg" srcset="images/pictos/megaphone.svg 38w" width="38" height="38" alt="">
                     </picture>
                     <h2 class="parag">Développer la pratique des thérapies avec les familles</h2>
                     <p>Promouvoir le développement des thérapies familiale et les approches de soin collaboratives avec les familles dans le cadre de nos formations et dans le service public.</p>
@@ -29,7 +29,7 @@
             <div class="column">
                 <div class="box is-fullheight">
                     <picture>
-                        <img src="images/pictos/people.svg" srcset="images/pictos/people.svg 38w" width="38px" height="38px" alt="">
+                        <img src="images/pictos/people.svg" srcset="images/pictos/people.svg 38w" width="38" height="38" alt="">
                     </picture>
                     <h2 class="parag">Former les professionnels à la pratique systémique</h2>
                     <p>Proposer un parcours structuré de formation à la pratique thérapeutique familiale systémique pour les professionnels médicaux, psychologiques, paramédicaux et sociaux.</p>
@@ -38,7 +38,7 @@
             <div class="column">
                 <div class="box is-fullheight">
                     <picture>
-                        <img src="images/pictos/hospital.svg" srcset="images/pictos/hospital.svg 38w" width="38px" height="38px" alt="">
+                        <img src="images/pictos/hospital.svg" srcset="images/pictos/hospital.svg 38w" width="38" height="38" alt="">
                     </picture>
                     <h2 class="parag">Approfondir la recherche clinique</h2>
                     <p>Sur les processus thérapeutiques, les vécus expérientiels des familles et contribuer à la réflexion sur la pertinence des modèles systémiques.</p>

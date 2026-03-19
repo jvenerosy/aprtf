@@ -24,13 +24,13 @@
         <div class="card-content">
             <p class="date">
                 <picture>
-                    <img src="images/pictos/calendar.svg" srcset="images/pictos/calendar.svg 38w" width="16px" height="16px" alt="">
+                    <img src="images/pictos/calendar.svg" srcset="images/pictos/calendar.svg 38w" width="16" height="16" alt="">
                 </picture>
                 {dateUpdated}
             </p>
             <p class="lieu">
                 <picture>
-                    <img src="images/pictos/location.svg" srcset="images/pictos/location.svg 38w" width="16px" height="16px" alt="">
+                    <img src="images/pictos/location.svg" srcset="images/pictos/location.svg 38w" width="16" height="16" alt="">
                 </picture>
                 {lieu}
             </p>
