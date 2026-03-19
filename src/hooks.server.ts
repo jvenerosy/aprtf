@@ -14,12 +14,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 		'Content-Security-Policy',
 		[
 			"default-src 'self'",
-			"script-src 'self' 'unsafe-inline' https://acceslibre.beta.gouv.fr",
+			"script-src 'self' 'unsafe-inline' https://acceslibre.beta.gouv.fr https://analytics.jvnr.fr https://cdn.brevo.com",
 			"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 			"font-src 'self' https://fonts.gstatic.com",
 			"img-src 'self' data: https: blob:",
 			"frame-src 'self' https://www.google.com https://acceslibre.beta.gouv.fr",
-			"connect-src 'self' https://api.aprtf.jvnr.fr https://aprtf.jvnr.fr",
+			"connect-src 'self' https://api.aprtf.jvnr.fr https://aprtf.jvnr.fr https://analytics.jvnr.fr https://cdn.brevo.com",
 			"object-src 'none'",
 			"base-uri 'self'"
 		].join('; ')
