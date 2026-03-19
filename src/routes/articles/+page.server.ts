@@ -7,7 +7,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
     const response = await fetch(`${PUBLIC_HOST_API}/items/informations`);
     
     if (!response.ok) {
-        console.error('Error fetching articles:', response.status);
         return {
             articles: []
         };

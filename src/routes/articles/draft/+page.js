@@ -63,8 +63,7 @@ export async function load({ url }) {
             isPreview
         };
         
-    } catch (err) {
-        console.error('Erreur lors du chargement:', err);
+    } catch {
         throw error(500, 'Erreur lors du chargement de l\'article');
     }
 }
