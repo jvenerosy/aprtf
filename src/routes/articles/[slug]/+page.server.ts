@@ -1,15 +1,11 @@
-import type { PageServerLoad, EntryGenerator } from './$types';
+import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import MarkdownIt from 'markdown-it';
 import { PUBLIC_HOST_API } from '$env/static/public';
 
 let md = new MarkdownIt();
 
-export const entries: EntryGenerator = async () => {
-    const response = await fetch(`${PUBLIC_HOST_API}/items/informations?fields=slug&filter[status][_eq]=published`);
-    const data = await response.json();
-    return data.data.map((item: { slug: string }) => ({ slug: item.slug }));
-};
+export const prerender = false;
 
 export const load: PageServerLoad = async ({ params, fetch }) => {
     const { slug } = params;

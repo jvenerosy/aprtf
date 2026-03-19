@@ -1,6 +1,8 @@
 import type { PageServerLoad } from './$types';
 import { PUBLIC_HOST_API } from '$env/static/public';
 
+export const prerender = false;
+
 export const load: PageServerLoad = async ({ fetch }) => {
     const response = await fetch(`${PUBLIC_HOST_API}/items/informations`);
     
